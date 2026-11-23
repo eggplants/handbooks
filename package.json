@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "gitbook-plugin-search-pro": "^2.0.2",
-    "honkit": "^6.2.5",
+    "honkit": "^7.0.0",
     "honkit-plugin-handbooks": "link:plugins/handbooks",
     "honkit-plugin-lang-switch": "link:plugins/lang-switch"
   }
