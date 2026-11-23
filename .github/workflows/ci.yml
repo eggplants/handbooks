@@ -25,7 +25,7 @@ jobs:
           persist-credentials: false
       - name: Drop the tools mise.toml marks as local-only
         run: sed -i '/# \[skip ci\]/d' mise.toml
-      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+      - uses: jdx/mise-action@236a21c3b91f5db6d4e174b348674a0f0caac06d # v5.2.9
       - run: mise run ci
       - if: github.event_name != 'pull_request' && github.ref_name == github.event.repository.default_branch
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
