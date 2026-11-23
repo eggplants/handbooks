@@ -1,0 +1,16 @@
+{
+  "name": "handbooks",
+  "private": true,
+  "type": "module",
+  "repository": "https://github.com/eggplants/handbooks",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "devDependencies": {
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "honkit": "^6.2.5",
+    "honkit-plugin-handbooks": "link:plugins/handbooks",
+    "honkit-plugin-lang-switch": "link:plugins/lang-switch"
+  }
+}

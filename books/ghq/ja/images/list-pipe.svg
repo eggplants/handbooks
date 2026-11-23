@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" width="720" height="270" role="img" aria-labelledby="title desc">
+  <title id="title">ghq list の出力を絞り込んで移動する</title>
+  <desc id="desc">ghq list -p が 1 行に一つずつパスを出力し、fzf がその中から一つを選び、選んだパスに cd で移る。</desc>
+  <style>
+    .card{fill:#fffaf0;stroke:#efe2c8;stroke-width:2}
+    .t{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;fill:#3b3b3b}
+    .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"DejaVu Sans Mono","Noto Sans Mono",monospace}
+    .b{font-weight:700}
+    .mute{fill:#7d7d7d}
+    .white{fill:#ffffff;stroke:#cfcfcf;stroke-width:2}
+    .repo{fill:#ffecc7;stroke:#e39623;stroke-width:2}
+    .tr{fill:#9a5a00}
+    .th{fill:#1f4fa0}
+    .folder{fill:#ffd98a;stroke:#d9a43a;stroke-width:5}
+    .arrow{fill:none;stroke:#8f8f8f;stroke-width:4;stroke-linecap:round;marker-end:url(#ah)}
+  </style>
+  <defs>
+    <symbol id="folder" viewBox="0 0 100 76">
+      <path d="M6 14a8 8 0 0 1 8-8h22l9 9h41a8 8 0 0 1 8 8v39a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8z"/>
+    </symbol>
+    <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="3.5" markerHeight="3.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8f8f8f"/></marker>
+  </defs>
+
+  <rect class="card" x="2" y="2" width="716" height="266" rx="20"/>
+
+  <!-- list -->
+  <rect class="white" x="20" y="40" width="276" height="186" rx="12"/>
+  <text class="t m b" x="36" y="68" font-size="14">$ ghq list -p</text>
+  <text class="t m" x="36" y="102" font-size="12">~/ghq/github.com/junegunn/fzf</text>
+  <text class="t m" x="36" y="130" font-size="12">~/ghq/github.com/peco/peco</text>
+  <rect class="repo" x="28" y="142" width="260" height="24" rx="6"/>
+  <text class="t m tr" x="36" y="159" font-size="12">~/ghq/github.com/x-motemen/ghq</text>
+  <text class="t m" x="36" y="186" font-size="12">~/ghq/gitlab.com/alice/dotfiles</text>
+  <text class="t m mute" x="36" y="212" font-size="12">…</text>
+
+  <path class="arrow" d="M304 133H330"/>
+
+  <!-- fzf -->
+  <polygon points="338,64 452,110 452,156 338,202" fill="#dce9ff" stroke="#3f7bdc" stroke-width="2.5" stroke-linejoin="round"/>
+  <text class="t m b th" x="390" y="140" font-size="22" text-anchor="middle">fzf</text>
+
+  <path class="arrow" d="M460 133H488"/>
+
+  <!-- picked -->
+  <rect class="repo" x="496" y="113" width="150" height="40" rx="12"/>
+  <text class="t m tr" x="571" y="138" font-size="14" text-anchor="middle">x-motemen/ghq</text>
+
+  <path class="arrow" d="M571 158V180"/>
+  <use href="#folder" class="folder" x="538" y="186" width="66" height="50"/>
+  <text class="t m b" x="618" y="220" font-size="19">cd</text>
+</svg>

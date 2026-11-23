@@ -1,0 +1,14 @@
+{
+  "title": "ghq handbook",
+  "description": "Unofficial ghq Handbook",
+  "language": "en",
+  "plugins": ["-lunr", "-search", "search-pro", "lang-switch", "handbooks"],
+  "pluginsConfig": {
+    "handbooks": {
+      "project": "https://github.com/x-motemen/ghq"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

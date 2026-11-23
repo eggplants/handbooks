@@ -1,0 +1,20 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-community": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-community"
+      }
+    },
+    "yomiyasu": {
+      "source": {
+        "source": "github",
+        "repo": "nanaism/yomiyasu"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "eli5@claude-community": true,
+    "yomiyasu@yomiyasu": true
+  }
+}

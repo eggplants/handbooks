@@ -1,0 +1,10 @@
+{
+  "name": "honkit-plugin-lang-switch",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Toolbar menu that opens the same page of a multilingual HonKit book in another language",
+  "main": "index.js",
+  "engines": {
+    "honkit": ">=6.0.0"
+  }
+}

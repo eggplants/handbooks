@@ -1,0 +1,76 @@
+[settings]
+minimum_release_age = "7d"
+
+[tools]
+actionlint = "latest"
+claude = "latest"  # [skip ci]
+node = "24"
+pinact = "latest"  # [skip ci]
+pnpm = "12"
+rumdl = "latest"
+shellcheck = "latest"
+tombi = "latest"
+usage = "latest"  # [skip ci]
+
+[tasks.init]
+description = "Install dependencies and the git pre-commit hook"
+run = ["pnpm install", "mise generate git-pre-commit --write --task pre-commit"]
+
+# Each handbook is a multilingual HonKit book in books/<book>/ (book.json and
+# LANGS.md at the top, one directory per language). HonKit resolves the output
+# folder against the book folder, so pass it as an absolute path.
+
+[tasks.serve]
+description = "Serve one handbook at http://localhost:4000 and rebuild it on every change"
+usage = 'arg "<book>" help="directory name under books/, e.g. ghq"'
+run = 'pnpm exec honkit serve "books/${usage_book}" "{{config_root}}/_book/${usage_book}"'
+
+[tasks.build]
+description = "Build every handbook (or the ones given) and the top page into _site/"
+usage = 'arg "[book]..." help="directory names under books/ (default: all)" var=#true'
+run = "node scripts/build.mjs ${usage_book}"
+
+[tasks.preview]
+description = "Build the whole site and serve _site/ at http://localhost:4000"
+depends = ["build"]
+run = "node scripts/preview.mjs"
+
+[tasks.fmt]
+description = "Format Markdown and TOML"
+depends = ["fmt:*"]
+
+[tasks."fmt:md"]
+description = "Format Markdown with rumdl"
+run = "rumdl fmt ."
+
+[tasks."fmt:toml"]
+description = "Format TOML with tombi"
+run = "tombi format"
+
+[tasks.lint]
+description = "Lint Markdown, TOML and the GitHub Actions workflows"
+depends = ["lint:*"]
+
+[tasks."lint:md"]
+description = "Lint Markdown with rumdl"
+run = "rumdl check ."
+
+[tasks."lint:toml"]
+description = "Check TOML formatting and lint against the mise schema with tombi"
+run = ["tombi format --check", "tombi lint --error-on-warnings"]
+
+[tasks."lint:actions"]
+description = "Lint the GitHub Actions workflows with actionlint (and shellcheck)"
+run = "actionlint .github/workflows/*.yml"
+
+[tasks.pre-commit]
+description = "Run before every commit (git hook)"
+depends = ["lint"]
+
+[tasks.ci]
+description = "Install dependencies, lint, then build the site (what CI runs)"
+run = ["pnpm install --frozen-lockfile", "mise run lint", "mise run build"]
+
+[tasks.pinup]
+description = "Update the pinned action digests"
+run = "pinact run -u --min-age 7"

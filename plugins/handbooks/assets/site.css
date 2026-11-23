@@ -1,0 +1,275 @@
+/* Shared by the top page (site/index.html) and the language selection page
+   (_layouts/website/languages.html). Not loaded on the pages of a book. */
+
+:root {
+  color-scheme: light;
+  --bg: #f6f3ec;
+  --surface: #fffdf8;
+  --border: #e4dac8;
+  --text: #2b2a27;
+  --muted: #6c675d;
+  --accent: #2f6fd6;
+  --accent-soft: #e4edfb;
+  --shadow: 0 1px 2px rgb(60 48 24 / 6%), 0 6px 20px rgb(60 48 24 / 6%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #15171b;
+    --surface: #1d2026;
+    --border: #30343d;
+    --text: #e8e6e1;
+    --muted: #a29d93;
+    --accent: #80aaf2;
+    --accent-soft: #243149;
+    --shadow: none;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #15171b;
+  --surface: #1d2026;
+  --border: #30343d;
+  --text: #e8e6e1;
+  --muted: #a29d93;
+  --accent: #80aaf2;
+  --accent-soft: #243149;
+  --shadow: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Noto Sans CJK JP", "Yu Gothic UI", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.site {
+  max-width: 960px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 64px 16px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.site.narrow {
+  max-width: 640px;
+}
+
+.site > main {
+  flex: 1;
+}
+
+.site-header {
+  margin-bottom: 40px;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.site-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.label {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards.stack {
+  grid-template-columns: 1fr;
+}
+
+.card {
+  position: relative;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+/* the title link covers the whole card; other links sit above it */
+.card-link {
+  color: var(--text);
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-link:focus-visible {
+  outline: none;
+}
+
+.card-link:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card .lang-name {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.card.choice {
+  padding-right: 52px;
+}
+
+.card.choice::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  color: var(--muted);
+  transform: translateY(-50%);
+}
+
+.card.choice:hover::after {
+  color: var(--accent);
+}
+
+/* one grid for every language, so that the descriptions line up */
+.langs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 8px 10px;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.langs li {
+  display: contents;
+}
+
+.langs .tag {
+  justify-self: start;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.project {
+  margin-top: 16px !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 0.8125rem;
+}
+
+/* above the stretched title link, so that it stays clickable on its own */
+.project a {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+}
+
+.project a:hover {
+  color: var(--accent);
+}
+
+.site-footer {
+  margin-top: 56px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}

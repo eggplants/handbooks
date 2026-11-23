@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 290" width="720" height="290" role="img" aria-labelledby="title desc">
+  <title id="title">クローンの形の違い</title>
+  <desc id="desc">ふつうのクローンは ghq ディレクトリの中に .git と作業ツリーのファイルがある。--bare は ghq.git ディレクトリそのものがベアリポジトリになる。--clean-bare は ghq ディレクトリの中の .git がベアリポジトリで、その隣に main や feature のワークツリーを並べられる。</desc>
+  <style>
+    .card{fill:#fffaf0;stroke:#efe2c8;stroke-width:2}
+    .t{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;fill:#3b3b3b}
+    .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"DejaVu Sans Mono","Noto Sans Mono",monospace}
+    .b{font-weight:700}
+    .mute{fill:#7d7d7d}
+    .white{fill:#ffffff;stroke:#e0e0e0;stroke-width:2}
+    .folder{fill:#ffd98a;stroke:#d9a43a;stroke-width:6}
+    .tr{fill:#9a5a00}
+    .to{fill:#1d6b48}
+    .th{fill:#1f4fa0}
+  </style>
+  <defs>
+    <symbol id="folder" viewBox="0 0 100 76">
+      <path d="M6 14a8 8 0 0 1 8-8h22l9 9h41a8 8 0 0 1 8 8v39a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8z"/>
+    </symbol>
+  </defs>
+
+  <rect class="card" x="2" y="2" width="716" height="286" rx="20"/>
+
+  <!-- normal -->
+  <text class="t b" x="124" y="40" font-size="17" text-anchor="middle">ふつう</text>
+  <rect class="white" x="24" y="58" width="200" height="164" rx="14"/>
+  <use href="#folder" class="folder" x="40" y="74" width="30" height="23"/>
+  <text class="t m b tr" x="78" y="92" font-size="16">ghq/</text>
+  <text class="t m" x="48" y="126" font-size="15">├─ .git/</text>
+  <text class="t m" x="48" y="156" font-size="15">├─ README.md</text>
+  <text class="t m" x="48" y="186" font-size="15">└─ main.go</text>
+  <text class="t mute" x="124" y="252" font-size="14" text-anchor="middle">ファイルが見える</text>
+
+  <!-- bare -->
+  <text class="t m b" x="336" y="40" font-size="17" text-anchor="middle">--bare</text>
+  <rect class="white" x="236" y="58" width="200" height="164" rx="14"/>
+  <use href="#folder" class="folder" x="252" y="74" width="30" height="23"/>
+  <text class="t m b tr" x="290" y="92" font-size="16">ghq.git/</text>
+  <text class="t m" x="260" y="126" font-size="15">├─ HEAD</text>
+  <text class="t m" x="260" y="156" font-size="15">├─ objects/</text>
+  <text class="t m" x="260" y="186" font-size="15">└─ refs/</text>
+  <text class="t mute" x="336" y="252" font-size="14" text-anchor="middle">Git の中身だけ</text>
+
+  <!-- clean-bare -->
+  <text class="t m b" x="572" y="40" font-size="17" text-anchor="middle">--clean-bare</text>
+  <rect class="white" x="448" y="58" width="248" height="164" rx="14"/>
+  <use href="#folder" class="folder" x="464" y="74" width="30" height="23"/>
+  <text class="t m b tr" x="502" y="92" font-size="16">ghq/</text>
+  <text class="t m th" x="472" y="126" font-size="15">├─ .git/</text>
+  <text class="t mute" x="594" y="126" font-size="12">← ベア</text>
+  <text class="t m to" x="472" y="156" font-size="15">├─ main/</text>
+  <text class="t mute" x="594" y="156" font-size="12">← ワークツリー</text>
+  <text class="t m to" x="472" y="186" font-size="15">└─ feature/</text>
+  <text class="t mute" x="594" y="186" font-size="12">← ワークツリー</text>
+  <text class="t mute" x="572" y="252" font-size="14" text-anchor="middle">ブランチごとに作業場所を並べる</text>
+</svg>

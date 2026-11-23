@@ -1,0 +1,5 @@
+toml-version = "v1.0.0"
+
+[files]
+# clones of the documented projects, kept only as references for writing
+exclude = ["refs/**", "node_modules/**"]

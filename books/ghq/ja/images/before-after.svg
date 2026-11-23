@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-labelledby="title desc">
+  <title id="title">ghq を使う前と使った後</title>
+  <desc id="desc">左では、リポジトリがあちこちのディレクトリに散らばり、同じリポジトリが二つある。右では、~/ghq の下にホスト、オーナー、リポジトリ名の順で並んでいる。</desc>
+  <style>
+    .card{fill:#fffaf0;stroke:#efe2c8;stroke-width:2}
+    .t{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;fill:#3b3b3b}
+    .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"DejaVu Sans Mono","Noto Sans Mono",monospace}
+    .b{font-weight:700}
+    .mute{fill:#7d7d7d}
+    .folder{fill:#ffd98a;stroke:#d9a43a;stroke-width:4}
+    .gray{fill:#f1f1f1;stroke:#a9a9a9;stroke-width:2}
+    .host{fill:#dce9ff;stroke:#3f7bdc;stroke-width:2}
+    .owner{fill:#d9f4e6;stroke:#2f9e6e;stroke-width:2}
+    .repo{fill:#ffecc7;stroke:#e39623;stroke-width:2}
+    .th{fill:#1f4fa0}
+    .to{fill:#1d6b48}
+    .tr{fill:#9a5a00}
+    .line{fill:none;stroke:#b9b9b9;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+    .arrow{fill:none;stroke:#8f8f8f;stroke-width:6;stroke-linecap:round;marker-end:url(#ah)}
+  </style>
+  <defs>
+    <symbol id="folder" viewBox="0 0 100 76">
+      <path d="M6 14a8 8 0 0 1 8-8h22l9 9h41a8 8 0 0 1 8 8v39a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8z"/>
+    </symbol>
+    <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#8f8f8f"/>
+    </marker>
+  </defs>
+
+  <rect class="card" x="2" y="2" width="716" height="336" rx="20"/>
+
+  <!-- left: scattered clones -->
+  <text class="t b" x="180" y="40" font-size="19" text-anchor="middle">git clone だけだと</text>
+  <g transform="translate(40 70) rotate(-8)">
+    <use href="#folder" class="folder" width="72" height="55"/>
+    <text class="t m" x="36" y="74" font-size="12" text-anchor="middle">~/src/ghq</text>
+  </g>
+  <g transform="translate(180 62) rotate(7)">
+    <use href="#folder" class="folder" width="72" height="55"/>
+    <text class="t m" x="36" y="74" font-size="12" text-anchor="middle">~/work/fzf</text>
+  </g>
+  <g transform="translate(100 158) rotate(5)">
+    <use href="#folder" class="folder" width="72" height="55"/>
+    <text class="t m" x="36" y="74" font-size="12" text-anchor="middle">~/tmp/ghq</text>
+  </g>
+  <g transform="translate(222 150) rotate(-6)">
+    <use href="#folder" class="folder" width="72" height="55"/>
+    <text class="t m" x="36" y="74" font-size="12" text-anchor="middle">~/Desktop/peco</text>
+  </g>
+  <g transform="translate(30 234) rotate(-3)">
+    <use href="#folder" class="folder" width="72" height="55"/>
+    <text class="t m" x="36" y="74" font-size="12" text-anchor="middle">~/fzf-old</text>
+  </g>
+  <circle cx="246" cy="266" r="27" fill="#e5534b"/>
+  <text class="t b" x="246" y="279" font-size="36" text-anchor="middle" style="fill:#ffffff">?</text>
+  <text class="t mute" x="180" y="326" font-size="15" text-anchor="middle">どこに置いたっけ？</text>
+
+  <!-- middle arrow -->
+  <path class="arrow" d="M330 186H384"/>
+
+  <!-- right: tidy tree -->
+  <text class="t b" x="548" y="40" font-size="19" text-anchor="middle">ghq get だと</text>
+  <path class="line" d="M414 100V129H432"/>
+  <path class="line" d="M452 146V264"/>
+  <path class="line" d="M452 176H476M452 220H476M452 264H476"/>
+  <path class="line" d="M596 176H626M596 220H626M596 264H626"/>
+
+  <rect class="gray" x="396" y="66" width="92" height="34" rx="17"/>
+  <text class="t m" x="442" y="89" font-size="16" text-anchor="middle">~/ghq</text>
+
+  <rect class="host" x="432" y="112" width="128" height="34" rx="12"/>
+  <text class="t m th" x="496" y="135" font-size="16" text-anchor="middle">github.com</text>
+
+  <rect class="owner" x="476" y="160" width="120" height="32" rx="12"/>
+  <text class="t m to" x="536" y="182" font-size="15" text-anchor="middle">x-motemen</text>
+  <rect class="owner" x="476" y="204" width="120" height="32" rx="12"/>
+  <text class="t m to" x="536" y="226" font-size="15" text-anchor="middle">junegunn</text>
+  <rect class="owner" x="476" y="248" width="120" height="32" rx="12"/>
+  <text class="t m to" x="536" y="270" font-size="15" text-anchor="middle">peco</text>
+
+  <rect class="repo" x="626" y="160" width="74" height="32" rx="12"/>
+  <text class="t m tr" x="663" y="182" font-size="15" text-anchor="middle">ghq</text>
+  <rect class="repo" x="626" y="204" width="74" height="32" rx="12"/>
+  <text class="t m tr" x="663" y="226" font-size="15" text-anchor="middle">fzf</text>
+  <rect class="repo" x="626" y="248" width="74" height="32" rx="12"/>
+  <text class="t m tr" x="663" y="270" font-size="15" text-anchor="middle">peco</text>
+
+  <text class="t mute" x="548" y="326" font-size="15" text-anchor="middle">URL どおりに並ぶ</text>
+</svg>

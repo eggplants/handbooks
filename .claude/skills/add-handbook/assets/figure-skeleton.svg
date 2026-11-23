@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="720" height="260" role="img" aria-labelledby="title desc">
+  <!-- 図の名前（短く）と、図が示すことを一、二文で書く。alt と同じ内容でよい -->
+  <title id="title">取ってくる、並べる、移る</title>
+  <desc id="desc">左から右へ、三つの段階を矢印でつないだ図。</desc>
+  <style>
+    .card{fill:#fffaf0;stroke:#efe2c8;stroke-width:2}
+    .t{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;fill:#3b3b3b}
+    .m{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"DejaVu Sans Mono","Noto Sans Mono",monospace}
+    .b{font-weight:700}
+    .mute{fill:#7d7d7d}
+    .folder{fill:#ffd98a;stroke:#d9a43a;stroke-width:4}
+    .cloud{fill:#dce9ff}
+    .white{fill:#ffffff;stroke:#cfcfcf;stroke-width:2}
+    .arrow{fill:none;stroke:#b0b0b0;stroke-width:4;stroke-linecap:round;marker-end:url(#ah)}
+  </style>
+  <defs>
+    <symbol id="folder" viewBox="0 0 100 76">
+      <path d="M6 14a8 8 0 0 1 8-8h22l9 9h41a8 8 0 0 1 8 8v39a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8z"/>
+    </symbol>
+    <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="3.5" markerHeight="3.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b0b0b0"/></marker>
+  </defs>
+
+  <!-- 背景のカード。夜間表示のテーマでも読めるよう、図は自前の背景を持つ -->
+  <rect class="card" x="2" y="2" width="716" height="256" rx="20"/>
+
+  <!-- 1 -->
+  <circle class="cloud" cx="103" cy="66" r="17"/>
+  <circle class="cloud" cx="125" cy="54" r="23"/>
+  <circle class="cloud" cx="148" cy="66" r="17"/>
+  <rect class="cloud" x="103" y="64" width="45" height="19"/>
+  <use href="#folder" class="folder" x="88" y="110" width="74" height="56"/>
+  <text class="t m b" x="125" y="214" font-size="19" text-anchor="middle">cmd get</text>
+  <text class="t mute" x="125" y="240" font-size="15" text-anchor="middle">取ってくる</text>
+
+  <path class="arrow" d="M182 120H278"/>
+
+  <!-- 2 -->
+  <rect class="white" x="305" y="44" width="110" height="140" rx="12"/>
+  <rect x="320" y="66" width="80" height="12" rx="6" fill="#d6e2f0"/>
+  <rect x="320" y="94" width="80" height="12" rx="6" fill="#d6e2f0"/>
+  <rect x="320" y="122" width="80" height="12" rx="6" fill="#d6e2f0"/>
+  <text class="t m b" x="360" y="214" font-size="19" text-anchor="middle">cmd list</text>
+  <text class="t mute" x="360" y="240" font-size="15" text-anchor="middle">並べる</text>
+
+  <path class="arrow" d="M428 120H524"/>
+
+  <!-- 3 -->
+  <use href="#folder" class="folder" x="548" y="104" width="96" height="74"/>
+  <text class="t m b" x="595" y="214" font-size="19" text-anchor="middle">cd</text>
+  <text class="t mute" x="595" y="240" font-size="15" text-anchor="middle">移る</text>
+</svg>

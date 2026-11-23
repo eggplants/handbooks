@@ -1,0 +1,37 @@
+{%- set site = config.pluginsConfig.handbooks -%}
+{%- set ja = config.language == "ja" -%}
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config.title }}</title>
+    <meta name="description" content="{{ config.description }}">
+    <meta name="generator" content="HonKit {{ gitbook.version }}">
+    <link rel="icon" href="{{ "images/favicon.ico"|resolveAsset }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ "honkit-plugin-handbooks/site.css"|resolveAsset }}">
+</head>
+<body>
+<div class="site narrow">
+    <nav>
+        <a class="back" href="../">← {% if ja %}ハンドブック一覧{% else %}All handbooks{% endif %}</a>
+    </nav>
+    <header class="site-header">
+        <h1>{{ config.title }}</h1>
+        {% if config.description %}<p>{{ config.description }}</p>{% endif %}
+        {% if site.project %}<p class="project"><a href="{{ site.project }}">{{ site.project|replace("https://", "") }}</a></p>{% endif %}
+    </header>
+    <main>
+        <h2 class="label">{{ "LANGS_CHOOSE"|t }}</h2>
+        <ul class="cards stack">
+        {% for lang in (site.languages or languages.list) %}
+            <li class="card choice" lang="{{ lang.id }}">
+                <a class="card-link lang-name" href="{{ (lang.id + "/README.md")|contentURL }}">{{ lang.title }}</a>
+                {% if lang.description %}<p>{{ lang.description }}</p>{% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </main>
+</div>
+</body>
+</html>
