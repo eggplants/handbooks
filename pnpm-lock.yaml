@@ -12,8 +12,8 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2
       honkit:
-        specifier: ^6.2.5
-        version: 6.2.5
+        specifier: ^7.0.0
+        version: 7.0.0
       honkit-plugin-handbooks:
         specifier: link:plugins/handbooks
         version: link:plugins/handbooks
@@ -34,26 +34,30 @@ packages:
     resolution: {integrity: sha512-tIPRHo1T2SFmAm+j77cDsj0RuaszP7xJxsaVTTAF5CwKyTbazw9TnIVlpIWM5yWfIWAWcAZy92RcnPgMJwny1w==}
     engines: {node: '>=8.11', npm: '>=5.0.0', yarn: '>=1.1.0'}
 
-  '@honkit/asciidoc@6.2.5':
-    resolution: {integrity: sha512-lb6NNgpdRHKySQx4dI8xtrc8dfiS6NiY7UXquH8HoLnUL8xtDEpkwyc1oyafolYidJe/KBp8MDTF8DYEj2bBHA==}
+  '@honkit/asciidoc@7.0.0':
+    resolution: {integrity: sha512-DdPT18cmquZB1s2DehWBKPFLFLGiofIIxGUf3Jf2mdDeYLTAMQLE5u0j8VtNTZVMLSDnorRmJQlEko7Nn2EP/w==}
 
-  '@honkit/honkit-plugin-fontsettings@6.2.5':
-    resolution: {integrity: sha512-GiDJpj8Rle8yI42i2FyJOsLFfKIvEfzIPe3xbtDrvqosVClYQO8ldblk+T3OD1JmGmOoUDBx2jy132Bf2jWubg==}
+  '@honkit/honkit-plugin-fontsettings@7.0.0':
+    resolution: {integrity: sha512-xgxwqKntIQY6woh8guHdA6959aTyG/SROD/gtxmKMfr9WMiozu/iW3MSIt5Eze8N7oet3JXx51IZvSDjXQcQOQ==}
     engines: {gitbook: '>=2.4.0'}
 
-  '@honkit/honkit-plugin-highlight@6.2.5':
-    resolution: {integrity: sha512-moLZysgicolNdZXKnXIFzorfilltgTlmcB2IYPJjcCXUCf2RhP9/tLFMTGHxnuuFF4G0CaIpDSgH62yAv3Da2Q==}
+  '@honkit/honkit-plugin-highlight@7.0.0':
+    resolution: {integrity: sha512-tw/sjZt7gYWjvTzQLdJt7ZlwfU3D3qodV2O3ETrU7mh4sao+ZwCaGkiRzbFctZcchrZCfmkuk9CdTy1JD4cnKA==}
     engines: {gitbook: '>=2.4.0'}
 
-  '@honkit/honkit-plugin-theme-default@6.2.5':
-    resolution: {integrity: sha512-S0/T1NXIlfWfrewkDdeBCPF5puAiDUimDmwiSjgnqFbTtBJkA0y8oIeMyzy2tnU9+Xoqag0tvupQqRTdpRkaoQ==}
+  '@honkit/honkit-plugin-lunr@7.0.0':
+    resolution: {integrity: sha512-KDecKO9+AikSAv3K5BvudryOpeBx3MtTlAGp6+oY1/aKt44UnT12pHqmWzE32dJuQOmotsUKteRAfdOx18ZyPw==}
+    engines: {gitbook: '>=3.0.0-pre.0'}
+
+  '@honkit/honkit-plugin-theme-default@7.0.0':
+    resolution: {integrity: sha512-sbi/sAZKIFi/hP3PI38bfuqnWlT6Qiv4VNamZjZZaF+psXI38U+txu3ns3gaLqwz/t+ppRFHmdZjcqrGFP0GBg==}
     engines: {gitbook: '>=3.0.0'}
 
-  '@honkit/html@6.2.5':
-    resolution: {integrity: sha512-F4d2tnn4TzhMTd/afJQ2N9OUqV4aIHGQdyEU2CeCt5MKZmQ2JeZ+QGgBUI29hEIuhmSaMt67AsJGrkAHsGBl+A==}
+  '@honkit/html@7.0.0':
+    resolution: {integrity: sha512-YIUepDFfKiFXljvmJ/mLy5P+b8APuoknz2iqyzqdbmH7I0n26fmrw14lNtzIJGPRgrHp1eSj0Fy66MtMxdIVxQ==}
 
-  '@honkit/markdown-legacy@6.2.5':
-    resolution: {integrity: sha512-4nT0mgOi5Tz5hYuGOfRsBU/AorJkZmNPqM8dWes7nOwDbgu89X8Owv6VcwYC7kk53fEqo2w9ZDZ1OYMmwX4eJQ==}
+  '@honkit/markdown-legacy@7.0.0':
+    resolution: {integrity: sha512-YIJo6A5JdPg0ye4IY136DKEi7eFxkpq/Rv5Rcg6aCllIVLTrYcOQTuBNR58OuqMtNzYa0kt10Ba9MuKLJDdPlA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -405,10 +409,6 @@ packages:
   gitbook-plugin-livereload@0.0.1:
     resolution: {integrity: sha512-+5xinicId2ZcbP6jBTFfQBnjz8nhoBgcOuQfKTEM6Yg9fBsmo2mxY6ubrx1b5ozuIMyfDLkSihx97A7+X+EtQQ==}
 
-  gitbook-plugin-lunr@1.2.0:
-    resolution: {integrity: sha512-QBfFLMZmoyOfLzc5aZrlRCkmzb9YcSjzdnyJFiRI/nX+Nd6kK1XyN4DLGnNSMHkRcJchcpWiQ6XGqSqo7e+d+g==}
-    engines: {gitbook: '>=3.0.0-pre.0'}
-
   gitbook-plugin-search-pro@2.0.2:
     resolution: {integrity: sha512-JZvfwp1DPsoAeGjGwLsYNr4BBgreAUYBfrpZbnLKg3COAO+OsFYOKEAexHKATOajCEhiQMfkN1rnFGTYP2XTkA==}
     engines: {gitbook: '>=3.0.0'}
@@ -447,8 +447,8 @@ packages:
     resolution: {integrity: sha512-nbfWpyRMcMrPMmDwJB+dhX/eiaPKtc2RB+0QZskqJ3WjRA/FDS0e9hZrx8EC/lbEv8gXy98FcDbNa/dspAaJMg==}
     engines: {node: '>=12.0.0'}
 
-  honkit@6.2.5:
-    resolution: {integrity: sha512-TZ130HtOlTOxTOsmH0FVZLtZIBIVAIirm1boqY/UFo8KKeKNfOa611X7hgv29YoGcOkpGpnbHR0sdNkYXc2fCA==}
+  honkit@7.0.0:
+    resolution: {integrity: sha512-vGrB75JmDhCjRkdmK2Y+lKiBjpBSgS08d/6Utm+F5NBQwFc8QTSFdfgI4ay8Xkcs4FIDSVTiZREIfKY8TbUqnQ==}
     hasBin: true
 
   html-entities@1.2.0:
@@ -901,27 +901,32 @@ snapshots:
       asciidoctor-opal-runtime: 0.3.4
       unxhr: 1.2.0
 
-  '@honkit/asciidoc@6.2.5':
+  '@honkit/asciidoc@7.0.0':
     dependencies:
-      '@honkit/html': 6.2.5
+      '@honkit/html': 7.0.0
       asciidoctor: 2.2.9
 
-  '@honkit/honkit-plugin-fontsettings@6.2.5': {}
+  '@honkit/honkit-plugin-fontsettings@7.0.0': {}
 
-  '@honkit/honkit-plugin-highlight@6.2.5':
+  '@honkit/honkit-plugin-highlight@7.0.0':
     dependencies:
       highlight.js: 11.12.0
 
-  '@honkit/honkit-plugin-theme-default@6.2.5': {}
+  '@honkit/honkit-plugin-lunr@7.0.0':
+    dependencies:
+      html-entities: 1.2.0
+      lunr: 0.5.12
 
-  '@honkit/html@6.2.5':
+  '@honkit/honkit-plugin-theme-default@7.0.0': {}
+
+  '@honkit/html@7.0.0':
     dependencies:
       cheerio: 1.2.0
       lodash: 4.18.1
 
-  '@honkit/markdown-legacy@6.2.5':
+  '@honkit/markdown-legacy@7.0.0':
     dependencies:
-      '@honkit/html': 6.2.5
+      '@honkit/html': 7.0.0
       kramed: 0.5.6
       lodash: 4.18.1
 
@@ -1296,12 +1301,6 @@ snapshots:
 
   gitbook-plugin-livereload@0.0.1: {}
 
-  gitbook-plugin-lunr@1.2.0:
-    dependencies:
-      gitbook-plugin-search: 2.2.1
-      html-entities: 1.2.0
-      lunr: 0.5.12
-
   gitbook-plugin-search-pro@2.0.2:
     dependencies:
       html-entities: 1.2.0
@@ -1335,14 +1334,15 @@ snapshots:
 
   highlight.js@11.12.0: {}
 
-  honkit@6.2.5:
+  honkit@7.0.0:
     dependencies:
-      '@honkit/asciidoc': 6.2.5
-      '@honkit/honkit-plugin-fontsettings': 6.2.5
-      '@honkit/honkit-plugin-highlight': 6.2.5
-      '@honkit/honkit-plugin-theme-default': 6.2.5
-      '@honkit/html': 6.2.5
-      '@honkit/markdown-legacy': 6.2.5
+      '@honkit/asciidoc': 7.0.0
+      '@honkit/honkit-plugin-fontsettings': 7.0.0
+      '@honkit/honkit-plugin-highlight': 7.0.0
+      '@honkit/honkit-plugin-lunr': 7.0.0
+      '@honkit/honkit-plugin-theme-default': 7.0.0
+      '@honkit/html': 7.0.0
+      '@honkit/markdown-legacy': 7.0.0
       bash-color: 0.0.4
       cheerio: 1.2.0
       chokidar: 3.6.0
@@ -1361,7 +1361,6 @@ snapshots:
       flat-cache: 4.0.1
       front-matter: 2.3.0
       gitbook-plugin-livereload: 0.0.1
-      gitbook-plugin-lunr: 1.2.0
       gitbook-plugin-search: 2.2.1
       github-slugid: 1.0.1
       i18n-t: 1.0.1
